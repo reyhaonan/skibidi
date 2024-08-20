@@ -17,4 +17,7 @@ shape = SubResource("RectangleShape2D_8a70x")
 texture = ExtResource("1_j70d7")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 2.0
+target_desired_distance = 2.0
+path_postprocessing = 1
 script = ExtResource("2_x5mk4")

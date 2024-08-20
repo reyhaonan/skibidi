@@ -7,7 +7,7 @@ public partial class Pawn : CharacterBody2D
 {
     private NavigationAgent2D _navigationAgent;
 
-    private float _movementSpeed = 200.0f;
+    private float _movementSpeed = 100.0f;
     private Vector2 _movementTargetPosition = new Vector2(70.0f, 226.0f);
 
     public Vector2 MovementTarget
@@ -21,11 +21,6 @@ public partial class Pawn : CharacterBody2D
         base._Ready();
 
         _navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
-
-        // These values need to be adjusted for the actor's speed
-        // and the navigation layout.
-        _navigationAgent.PathDesiredDistance = 4.0f;
-        _navigationAgent.TargetDesiredDistance = 4.0f;
 
         // Make sure to not await during _Ready.
         Callable.From(ActorSetup).CallDeferred();
