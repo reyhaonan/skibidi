@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxhxfk4i0o8dc"]
+
+[ext_resource type="Script" path="res://Scripts/Pawn.cs" id="1_1ysmm"]
+[ext_resource type="Texture2D" uid="uid://bgfgrm173lksr" path="res://Assets/pawn.png" id="1_j70d7"]
+[ext_resource type="Script" path="res://Scripts/PawnNavigation.cs" id="2_x5mk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a70x"]
+size = Vector2(8, 14)
+
+[node name="Pawn" type="CharacterBody2D"]
+script = ExtResource("1_1ysmm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8a70x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j70d7")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+script = ExtResource("2_x5mk4")
